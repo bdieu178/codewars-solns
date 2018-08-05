@@ -24,16 +24,13 @@ using namespace std;
 vector<int> vowelIndices(std::string word)
 {
   // Process each letter in word into a map 
-  map<int, char> letters;
-  int counter = 0;
+  map<int, char> letters; int counter = 0;
   for(auto w_itr = word.begin(); w_itr != word.end(); ++w_itr){
     if((bool)isupper((*w_itr))) (*w_itr) = tolower((*w_itr));
-    ++counter;
-    letters[ (counter) ] = *w_itr; 
+    letters[ (++counter) ] = *w_itr; 
   }
   //Compare each letter element with the set of vowels
-  vector<int> indexes;
-  set<char> vowels { 'a', 'e', 'i', 'o', 'u', 'y' };
+  vector<int> indexes; set<char> vowels { 'a', 'e', 'i', 'o', 'u', 'y' };
   for (auto ltr = letters.begin(); ltr != letters.end(); ++ltr ) {
     auto search = vowels.find( (ltr->second) );
     if (search != vowels.end()) { indexes.push_back( (ltr->first)) ; }
@@ -43,9 +40,7 @@ vector<int> vowelIndices(std::string word)
 } 
 
 int main(){
-    auto i = vowelIndices("YoMama");
-    for(vector<int>::iterator v = i.begin(); v != i.end(); ++v ){
-        cout << *v << endl;
-    }
+    auto i = vowelIndices("SoftwareEngineering");
+    for(auto v = i.begin(); v != i.end(); ++v ){ cout << *v << endl;}
     return 0;
 }
