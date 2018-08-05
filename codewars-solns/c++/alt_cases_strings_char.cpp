@@ -5,7 +5,6 @@
 
 #include <iostream>
 #include <string>
-#include <assert.h>
 #include <cctype>
 using namespace std;
 
@@ -17,6 +16,5 @@ string to_alternating_case(const string& str){
      if( (bool)isupper( (*p)[i] ) )    { (*p)[i] = tolower ( (*p)[i] );  }
      else if ( (bool)islower((*p)[i])) { (*p)[i] = toupper ( (*p)[i] );  }
   }
-  cout << (*p) << endl;
   return *p;
 }
