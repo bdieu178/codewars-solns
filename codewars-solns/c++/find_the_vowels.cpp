@@ -25,9 +25,8 @@ vector<int> vowelIndices(std::string word)
 {
   // Process each letter in word into a map 
   map<int, char> letters;
-  string::iterator w_itr;
   int counter = 0;
-  for( w_itr = word.begin(); w_itr != word.end(); ++w_itr){
+  for(auto w_itr = word.begin(); w_itr != word.end(); ++w_itr){
     if((bool)isupper((*w_itr))) (*w_itr) = tolower((*w_itr));
     ++counter;
     letters[ (counter) ] = *w_itr; 
