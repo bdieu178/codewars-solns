@@ -40,7 +40,7 @@ vector<int> vowelIndices(std::string word)
 } 
 
 int main(){
-    auto i = vowelIndices("SoftwareEngineering");
+    auto i = vowelIndices("Potentially Fradulent Accounts");
     for(auto v = i.begin(); v != i.end(); ++v ){ cout << *v << endl;}
     return 0;
 }
